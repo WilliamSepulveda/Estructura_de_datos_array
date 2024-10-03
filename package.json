@@ -6,6 +6,7 @@
   "name": "estructura_de_datos_array",
   "version": "1.0.0",
   "main": "main.js",
+  "type":"commonjs",
   "devDependencies": {},
   "scripts": {
     "dev": "node main.js"
