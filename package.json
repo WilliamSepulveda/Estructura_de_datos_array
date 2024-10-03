@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "i": "^0.3.7",
+    "mongodb": "^6.9.0"
+  },
+  "name": "estructura_de_datos_array",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
