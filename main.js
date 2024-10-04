@@ -5,7 +5,7 @@ const sumaNumero = require('./js/module/sumaNumero');
 const contenedorElement = require('./js/module/contieneElementos');
 const buscarIndice = require('./js/module/encontrarIndice');
 const samYfrodo = require('./js/module/samYfrudo.js');
-
+const contarFrutas = require('./js/module/frutas.js');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -38,7 +38,8 @@ const rl = readline.createInterface({
 // });
 
 
-rl.question('Ingresa los valores separados por espacios: ', (nombreIngresados) => {
-    console.log(samYfrodo(nombreIngresados));
-        rl.close();
+rl.question('Ingresa las frutas (🍎, 🍐, 🍑) separadas por espacios: ', (input) => {
+    const entrada = input.split(' ').filter(item => item !== '');
+    console.log(contarFrutas(entrada));
+    rl.close();
 });
