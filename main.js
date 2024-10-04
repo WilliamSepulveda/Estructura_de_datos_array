@@ -4,7 +4,7 @@ const numeroMenor = require('./js/module/numeroMenor');
 const sumaNumero = require('./js/module/sumaNumero');
 const contenedorElement = require('./js/module/contieneElementos');
 const buscarIndice = require('./js/module/encontrarIndice');
-
+const samYfrodo = require('./js/module/samYfrudo.js');
 
 
 const rl = readline.createInterface({
@@ -29,10 +29,16 @@ const rl = readline.createInterface({
 // });
 
 
-rl.question('Ingresa los valores separados por espacios: ', (valoresIngresados) => {
-    rl.question('Ingresa el valor que deseas buscar: ', (valorBuscado) => {
-        console.log(buscarIndice(valoresIngresados, valorBuscado));
+// rl.question('Ingresa los valores separados por espacios: ', (valoresIngresados) => {
+//     rl.question('Ingresa el valor que deseas buscar: ', (valorBuscado) => {
+//         console.log(buscarIndice(valoresIngresados, valorBuscado));
         
+//         rl.close();
+//     });
+// });
+
+
+rl.question('Ingresa los valores separados por espacios: ', (nombreIngresados) => {
+    console.log(samYfrodo(nombreIngresados));
         rl.close();
-    });
 });
