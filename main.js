@@ -6,6 +6,8 @@ const contenedorElement = require('./js/module/contieneElementos');
 const buscarIndice = require('./js/module/encontrarIndice');
 const samYfrodo = require('./js/module/samYfrudo.js');
 const contarFrutas = require('./js/module/frutas.js');
+const comidaMonos = require('./js/module/comidaMonos.js');
+const { compileFunction } = require('vm');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -38,8 +40,37 @@ const rl = readline.createInterface({
 // });
 
 
-rl.question('Ingresa las frutas (🍎, 🍐, 🍑) separadas por espacios: ', (input) => {
-    const entrada = input.split(' ').filter(item => item !== '');
-    console.log(contarFrutas(entrada));
-    rl.close();
-});
+// rl.question('Ingresa las frutas (🍎, 🍐, 🍑) separadas por espacios: ', (input) => {
+//     const entrada = input.split(' ').filter(item => item !== '');
+//     console.log(contarFrutas(entrada));
+//     rl.close();
+// });
+
+
+
+ rl.question('Ingresa una lista de monos (🐵) y bananas (🍌): ', (input) => {
+        const comida = input.split(' ').filter(item => item !== '');
+        const tragazon = comidaMonos(comida);
+
+        const totalDeMonos = tragazon['🐵'];
+        const totalDeBananas = tragazon['🍌'];
+
+        rl.question('¿Cuántas bananas come cada mono? ', (bananasPorMono) => {
+            const bananasPorMonoNum = parseInt(bananasPorMono);
+
+            if (isNaN(bananasPorMonoNum) || bananasPorMonoNum <= 0) {
+                console.log('Por favor, ingresa un número válido de bananas.');
+            } else {
+                const totalNecesario = bananasPorMonoNum * totalDeMonos;
+
+                if (totalDeBananas >= totalNecesario) {
+                    console.log(`Suficientes bananas. Cada mono puede comer ${bananasPorMonoNum} bananas.`);
+                } else {
+                    console.log('¡Oh no!¡No hay suficientes bananas para los monos! 😭');
+                }
+            }
+            rl.close();
+        });
+    });
+
+
